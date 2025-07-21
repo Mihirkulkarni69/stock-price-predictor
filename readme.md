@@ -1,31 +1,47 @@
-# Stock Price Predictor 📈
+# 📈 Stock Price Predictor
 
-Predict future stock trends using yFinance + Prophet + Plotly + Streamlit.
-
-## How to Run
-```bash
-streamlit run app.py
+An interactive web app built with **Streamlit** and **Prophet** to forecast future stock prices. Upload your own stock CSV file or select a ticker to visualize trends and get AI-powered future price predictions.
 
 ---
 
-#### 📄 `src/predict.py`
-Paste:
-```python
-import yfinance as yf
-from prophet import Prophet
-import pandas as pd
+## 🚀 Features
 
-def fetch_data(ticker, start, end):
-    df = yf.download(ticker, start=start, end=end)
-    df.reset_index(inplace=True)
-    return df[['Date', 'Close']].rename(columns={'Date': 'ds', 'Close': 'y'})
+- 🔍 Fetch live stock data using **Yahoo Finance**
+- 📅 Predict future prices using **Facebook Prophet**
+- 📊 Interactive visualizations with **Plotly**
+- 📂 Export forecasts to CSV
+- ⚙️ Advanced customization options (seasonality, changepoints, etc.)
+- 🧠 Powered by machine learning
 
-def train_prophet(df):
-    model = Prophet()
-    model.fit(df)
-    return model
+---
 
-def predict_future(model, periods):
-    future = model.make_future_dataframe(periods=periods)
-    forecast = model.predict(future)
-    return forecast
+## 📷 Demo
+
+> _Coming soon!_ (You can add a Streamlit Cloud/Render/Hugging Face deployment link here)
+
+---
+
+## 🧑‍💻 How to Run Locally
+
+### ✅ Prerequisites
+
+- Python 3.8+
+- pip
+- Git
+
+### 🔧 Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/mihirkulkarni69/stock-price-predictor.git
+cd stock-price-predictor
+
+# 2. Create a virtual environment
+python -m venv .venv
+source .venv/bin/activate     # On Windows: .venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the Streamlit app
+streamlit run app.py
