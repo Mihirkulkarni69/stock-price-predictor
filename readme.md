@@ -17,7 +17,7 @@ An interactive web app built with **Streamlit** and **Prophet** to forecast futu
 
 ## 📷 Demo
 
-> _Coming soon!_ (You can add a Streamlit Cloud/Render/Hugging Face deployment link here)
+> _Coming soon!_ 
 
 ---
 
